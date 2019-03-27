@@ -13,6 +13,8 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
+gem 'jquery-rails'
+gem 'rails-ujs'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
