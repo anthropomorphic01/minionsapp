@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Minionsapp</title>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MinionsApp</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'true' %>
+    <%= stylesheet_link_tag    'site', media: 'all', 'data-turbolinks-track': 'true' %>    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'true' %>
+    <%= javascript_include_tag 'site', 'data-turbolinks-track': 'true' %>
+    
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
-  <h1>Site Default</h1>
+<body>
+  <%= yield %>
+</body>
+
 </html>
