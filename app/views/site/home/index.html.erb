@@ -1,31 +1,3 @@
-  <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navegation">
-    <div class="container">
-      <div class="navbar-header">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-      </div>
-      
-      <div class="collapse navbar-collapse" id="bs-exemple-navbar-collapse-1">
-        <ul class="nav navbar-nav">  
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>          
-          <li>
-            <a href="#">Contact</a>
-          </li>                    
-        </ul>
-      </div>
-    </div>
-  </nav>
-
   <!-- Page Content -->
   <div class="container">
 
@@ -33,13 +5,16 @@
 
       <div class="col-md-3">
 
-        <p class="lead">MinionsApp</p>
+        <p class="lead">Categorias</p>
         <div class="list-group">
-          <a href="#" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
+          <% @categories.each do |category| %>
+          <a href="#" class="list-group-item"><%= category.description %></a>
+          <% end %>        
         </div>
-
+        <br>
+        <h5>Usuário logado:</h5>
+        <h4><%= current_member.email %></h4>
+        <h6>(by email)</h6>      
       </div>
 
       <div class="col-md-9">
@@ -66,17 +41,17 @@
         </div>
       
         <div class="row">
-
+          <p></p><p></p>
           <div class="col-sm-4 col-lg-6 col-mb-4">
             <div class="thumbnail">
-              <img src="http://placehold.it/320x150" alt="">
+              <img src="<% @ads.each do |ad| %><%= ad.img %><% end %>" alt="">
               <div class="caption">
-                <h4 class="pull-right">$24,99</h4>
-                <h4><a href="#">First Product</a></h4>
-                <p>See more snippets like this online store item <a target="_blank" href="http://bootsnipp.com"/>Bootsnipp</a>.</p>
+                <h4 class="pull-right">R$<% @ads.each do |ad| %><%= ad.price_cents %><% end %></h4>
+                <h4><a href="#"><% @ads.each do |ad| %><%= ad.title %><% end %></a></h4>
+                <p><% @ads.each do |ad| %><%= ad.description %><% end %></p>
               </div>  
               <div class="ratings">
-                <p class="pull-right">15 Views</p>
+                <a target="_blank" href="http://bootsnipp.com"/>Reservar</a><p class="pull-right"><% @ads.each do |ad| %><%= ad.views %><% end %></p>
                 <p>
                   <span class="glyphicon glyphicon-star"></span>
                   <span class="glyphicon glyphicon-star"></span>                  
@@ -89,14 +64,14 @@
           </div>  
           <div class="col-sm-4 col-lg-6 col-mb-4">
             <div class="thumbnail">
-              <img src="http://placehold.it/320x150" alt="">
+              <img src="http://i64.tinypic.com/1zxmpab.png" alt="">
               <div class="caption">
-                <h4 class="pull-right">$24,99</h4>
-                <h4><a href="#">First Product</a></h4>
-                <p>See more snippets like this online store item <a target="_blank" href="http://bootsnipp.com"/>Bootsnipp</a>.</p>
+                <h4 class="pull-right">R$24.99</h4>
+                <h4><a href="#">Smurf</a></h4>
+                <p>Smurf fofo</p>
               </div>  
               <div class="ratings">
-                <p class="pull-right">15 Views</p>
+                 <a target="_blank" href="http://bootsnipp.com"/>Reservar</a><p class="pull-right">86 Views</p>
                 <p>
                   <span class="glyphicon glyphicon-star"></span>
                   <span class="glyphicon glyphicon-star"></span>                  
@@ -109,14 +84,14 @@
           </div> 
           <div class="col-sm-4 col-lg-6 col-mb-4">
             <div class="thumbnail">
-              <img src="http://placehold.it/320x150" alt="">
+              <img src="http://i67.tinypic.com/oprait.jpg" alt="">
               <div class="caption">
-                <h4 class="pull-right">$24,99</h4>
-                <h4><a href="#">First Product</a></h4>
-                <p>See more snippets like this online store item <a target="_blank" href="http://bootsnipp.com"/>Bootsnipp</a>.</p>
+                <h4 class="pull-right">R$56.99</h4>
+                <h4><a href="#">Boo</a></h4>
+                <p>Menina do Monstros SA</p>
               </div>  
               <div class="ratings">
-                <p class="pull-right">15 Views</p>
+                <a target="_blank" href="http://bootsnipp.com"/>Reservar</a><p class="pull-right">35 Views</p>
                 <p>
                   <span class="glyphicon glyphicon-star"></span>
                   <span class="glyphicon glyphicon-star"></span>                  
@@ -129,14 +104,14 @@
           </div>  
           <div class="col-sm-4 col-lg-6 col-mb-4">
             <div class="thumbnail">
-              <img src="http://placehold.it/320x150" alt="">
+              <img src="http://i68.tinypic.com/255utd5.jpg" alt="">
               <div class="caption">
-                <h4 class="pull-right">$24,99</h4>
-                <h4><a href="#">First Product</a></h4>
-                <p>See more snippets like this online store item <a target="_blank" href="http://bootsnipp.com"/>Bootsnipp</a>.</p>
+                <h4 class="pull-right">R$22.99</h4>
+                <h4><a href="#">Buzz Lightyear</a></h4>
+                <p>Herói de Toy Story. </p>
               </div>  
               <div class="ratings">
-                <p class="pull-right">15 Views</p>
+                <a target="_blank" href="http://bootsnipp.com"/>Reservar</a><p class="pull-right">61 Views</p>
                 <p>
                   <span class="glyphicon glyphicon-star"></span>
                   <span class="glyphicon glyphicon-star"></span>                  
@@ -152,14 +127,3 @@
       </div>
     </div>
   </div>  
-    <div class="container">
-      <hr>
-      <footer>
-        <div class="row">
-          <div class="col-lg-12">
-            <p>Copyright &copy; Your Website 2014</p>
-          </div>
-        </div>
-      </footer>  
-    </div>
- 
